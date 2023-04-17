@@ -1,0 +1,18 @@
+{
+  "name": "com.brunogattai.gattaieconomysystem",
+  "version": "1.0.0",
+  "displayName": "Gattai Economy System",
+  "description": "A clean, reusable and extendable economy system.",
+  "unity": "2020.3",
+  "unityRelease": "22f1",
+  "keywords": [
+    "economy",
+    "currency",
+    "reusable"
+  ],
+  "author": {
+    "name": "Bruno Gattai",
+    "email": "brunogattai1996@gmail.com",
+    "url": "https://github.com/Gattai1996"
+  }
+}
