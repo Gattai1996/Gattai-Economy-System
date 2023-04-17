@@ -2,21 +2,21 @@ namespace GattaiEconomySystem
 {
     public static class TradeSystem
     {
-        public static bool AttemptToBuy(EconomyEntity buyer, EconomyEntity seller, IInventoryItem item)
+        public static bool AttemptToBuy(EconomyEntity buyer, EconomyEntity seller, int price)
         {
-            if (buyer.Currency.CanAfford(item.Price))
+            if (buyer.Currency.CanAfford(price))
             {
-                buyer.Currency.SubtractFromBalance(item.Price);
-                seller.Currency.AddToBalance(item.Price);
+                buyer.Currency.SubtractFromBalance(price);
+                seller.Currency.AddToBalance(price);
                 return true;
             }
 
             return false;
         }
 
-        public static bool AttemptToSell(EconomyEntity seller, EconomyEntity buyer, IInventoryItem item)
+        public static bool AttemptToSell(EconomyEntity seller, EconomyEntity buyer, int price)
         {
-            return AttemptToBuy(buyer, seller, item);
+            return AttemptToBuy(buyer, seller, price);
         }
     }
 }
