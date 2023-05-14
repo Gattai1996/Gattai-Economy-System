@@ -24,6 +24,8 @@ namespace GattaiEconomySystem
         [SerializeField, Tooltip("Whether this is a soft currency, usually soft currencies can be acquired playing " +
                                  "the game without expending real money for it.")]
         private bool isSoftCurrency = true;
+
+        public Action<int> OnBalanceChange;
         
         /// <summary>
         /// Gets the current balance of the currency.
@@ -83,6 +85,7 @@ namespace GattaiEconomySystem
         {
             balance += value;
             ClampBalance();
+            OnBalanceChange?.Invoke(Balance);
         }
 
         /// <summary>
@@ -95,6 +98,7 @@ namespace GattaiEconomySystem
         {
             balance -= value;
             ClampBalance();
+            OnBalanceChange?.Invoke(Balance);
         }
 
         /// <summary>
